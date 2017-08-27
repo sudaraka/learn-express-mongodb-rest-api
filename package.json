@@ -5,12 +5,14 @@
   "description": "Practice code based on the video series Express MongoDB REST API by CodeWorkr",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "exit 0"
   },
   "keywords": [],
   "author": "Sudaraka Wijesinghe <sudaraka@sudaraka.org> (https://sudaraka.org/)",
   "license": "UNLICENSED",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "morgan": "^1.8.2"
   }
 }
