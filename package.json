@@ -1,0 +1,13 @@
+{
+  "name": "codeworkr-rest-api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Practice code based on the video series Express MongoDB REST API by CodeWorkr",
+  "main": "app.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "keywords": [],
+  "author": "Sudaraka Wijesinghe <sudaraka@sudaraka.org> (https://sudaraka.org/)",
+  "license": "UNLICENSED"
+}
