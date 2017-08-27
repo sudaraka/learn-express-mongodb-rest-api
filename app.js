@@ -18,5 +18,20 @@ app.use((req, res, next) => {
   next(err)
 })
 
+// Error handlers
+app.use((err, req, res, next) => {
+  const
+    error = 'development' === app.get('env') ? err : {},
+    status = err.status || 500
+
+  // Respond to client
+  res
+    .status(status)
+    .json({ 'error': { 'message': error.message } })
+
+  // Respond to server console
+  console.error(err)
+})
+
 // Start server
 app.listen(port, () => console.log(`Server is listening on port ${port}`))
