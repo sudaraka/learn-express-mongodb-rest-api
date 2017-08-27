@@ -8,6 +8,13 @@ const
 // Middleware
 app.use(logger('dev'))
 
+// Routes
+app.get('/', (req, res, next) => {
+  res
+    .status(200)
+    .json({ 'message': 'You requested the index page' })
+})
+
 // Catch 404 Errors and forward to error handlers
 app.use((req, res, next) => {
   const
