@@ -2,6 +2,9 @@ const
   express = require('express'),
   logger = require('morgan'),
 
+  // Routes
+  users = require('./routes/users'),
+
   app = express(),
   port = app.get('port') || 5000
 
@@ -9,11 +12,7 @@ const
 app.use(logger('dev'))
 
 // Routes
-app.get('/', (req, res, next) => {
-  res
-    .status(200)
-    .json({ 'message': 'You requested the index page' })
-})
+app.use('/users', users)
 
 // Catch 404 Errors and forward to error handlers
 app.use((req, res, next) => {
