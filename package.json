@@ -5,6 +5,7 @@
   "description": "Practice code based on the video series Express MongoDB REST API by CodeWorkr",
   "main": "app.js",
   "scripts": {
+    "db": "mkdir -p $HOME/opt/mongodb/codeworkr-api && docker run -it --rm -v $HOME/opt/mongodb/codeworkr-api/:/data/db mongo",
     "start": "nodemon app.js",
     "test": "exit 0"
   },
