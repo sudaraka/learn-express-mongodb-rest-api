@@ -1,12 +1,15 @@
 const
   express = require('express'),
   logger = require('morgan'),
+  mongoose = require('mongoose'),
 
   // Routes
   users = require('./routes/users'),
 
   app = express(),
   port = app.get('port') || 5000
+
+mongoose.createConnection('mongodb://172.17.0.2:27017/api-data')
 
 // Middleware
 app.use(logger('dev'))
