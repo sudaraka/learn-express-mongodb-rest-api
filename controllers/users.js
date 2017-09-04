@@ -40,5 +40,16 @@ module.exports = {
     res
       .status(200)
       .json()
+  },
+
+  'updateUser': async (req, res, next) => {
+    // req.body may contain any number of fields
+    const
+      { userId } = req.params,
+      user = await User.findByIdAndUpdate(userId, req.body)
+
+    res
+      .status(200)
+      .json()
   }
 }

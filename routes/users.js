@@ -11,5 +11,6 @@ router.route('/')
 router.route('/:userId')
   .get(usersController.getUser)
   .put(usersController.replaceUser)
+  .patch(usersController.updateUser)
 
 module.exports = router
