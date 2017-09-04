@@ -29,5 +29,16 @@ module.exports = {
     res
       .status(200)
       .json(user)
+  },
+
+  'replaceUser': async (req, res, next) => {
+    // TODO: enfore that req.body must contain all the fields
+    const
+      { userId } = req.params,
+      user = await User.findByIdAndUpdate(userId, req.body)
+
+    res
+      .status(200)
+      .json()
   }
 }
