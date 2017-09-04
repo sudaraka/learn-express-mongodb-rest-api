@@ -8,4 +8,7 @@ router.route('/')
   .get(usersController.index)
   .post(usersController.newUser)
 
+router.route('/:userId')
+  .get(usersController.getUser)
+
 module.exports = router

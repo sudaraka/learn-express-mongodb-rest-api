@@ -19,5 +19,15 @@ module.exports = {
     res
       .status(201)
       .json(user)
+  },
+
+  'getUser': async (req, res, next) => {
+    const
+      { userId } = req.params,
+      user = await User.findById(userId)
+
+    res
+      .status(200)
+      .json(user)
   }
 }
