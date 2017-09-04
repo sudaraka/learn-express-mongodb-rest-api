@@ -2,32 +2,32 @@ const
   User = require('../models/user')
 
 module.exports = {
-  'index': (req, res, next) => {
-    User
-      .find({})
-      .then(users => {
+  'index': async (req, res, next) => {
+    try {
+      const
+        users = await User.find({})
+
         res
           .status(200)
           .json(users)
-      })
-      .catch(err => {
-        next(err)
-      })
+    }
+    catch(ex) {
+      next(ex)
+    }
   },
 
-  'newUser': (req, res, next) => {
-    const
-      newUser = new User(req.body)
+  'newUser': async (req, res, next) => {
+    try {
+      const
+        newUser = new User(req.body),
+        user = await newUser.save()
 
-    newUser
-      .save()
-      .then(user => {
-        res
-          .status(201)
-          .json(user)
-      })
-      .catch(err => {
-        next(err)
-      })
+      res
+        .status(201)
+        .json(user)
+    }
+    catch(ex) {
+      next(ex)
+    }
   }
 }
