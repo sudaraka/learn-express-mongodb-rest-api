@@ -6,5 +6,6 @@ const
 
 router.route('/')
   .get(usersController.index)
+  .post(usersController.newUser)
 
 module.exports = router

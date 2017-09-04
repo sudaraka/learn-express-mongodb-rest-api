@@ -12,5 +12,20 @@ module.exports = {
         .status(200)
         .json(users)
     })
+  },
+
+  'newUser': (req, res, next) => {
+    const
+      newUser = new User(req.body)
+
+    newUser.save((err, user) => {
+      if(err) {
+        next(err)
+      }
+
+      res
+        .status(201)
+        .json(user)
+    })
   }
 }
