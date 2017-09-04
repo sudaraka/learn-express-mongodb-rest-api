@@ -3,31 +3,21 @@ const
 
 module.exports = {
   'index': async (req, res, next) => {
-    try {
-      const
-        users = await User.find({})
+    const
+      users = await User.find({})
 
-        res
-          .status(200)
-          .json(users)
-    }
-    catch(ex) {
-      next(ex)
-    }
+    res
+      .status(200)
+      .json(users)
   },
 
   'newUser': async (req, res, next) => {
-    try {
-      const
-        newUser = new User(req.body),
-        user = await newUser.save()
+    const
+      newUser = new User(req.body),
+      user = await newUser.save()
 
-      res
-        .status(201)
-        .json(user)
-    }
-    catch(ex) {
-      next(ex)
-    }
+    res
+      .status(201)
+      .json(user)
   }
 }
