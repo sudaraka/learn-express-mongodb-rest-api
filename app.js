@@ -9,7 +9,7 @@ const
   app = express(),
   port = app.get('port') || 5000
 
-mongoose.createConnection('mongodb://172.17.0.2:27017/api-data')
+mongoose.connect('mongodb://172.17.0.2:27017/api-data', { 'useMongoClient': true })
 
 // Middleware
 app.use(logger('dev'))
