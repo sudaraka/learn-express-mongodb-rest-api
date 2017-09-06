@@ -24,7 +24,7 @@ module.exports = {
 
   'getUser': async (req, res, next) => {
     const
-      { userId } = req.params,
+      { userId } = req.valid.params,
       user = await User.findById(userId)
 
     res
