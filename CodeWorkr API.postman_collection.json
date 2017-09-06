@@ -103,8 +103,19 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"make\": \"Mazda\",\n\t\"model\": \"RX8\",\n\t\"year\": 2005\n}"
+					"raw": "{\n\t\"make\": \"Nissan\",\n\t\"model\": \"Sunny\",\n\t\"year\": 1986\n}"
 				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a User Cars",
+			"request": {
+				"url": "http://127.0.01:5000/users/59ad82734702e622da7bdd94/cars",
+				"method": "GET",
+				"header": [],
+				"body": {},
 				"description": ""
 			},
 			"response": []

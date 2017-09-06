@@ -14,6 +14,7 @@ router.route('/:userId')
   .patch(usersController.updateUser)
 
 router.route('/:userId/cars')
+  .get(usersController.getUserCars)
   .post(usersController.newUserCar)
 
 module.exports = router
