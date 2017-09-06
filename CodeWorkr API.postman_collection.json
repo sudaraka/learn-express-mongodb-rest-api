@@ -41,7 +41,7 @@
 		{
 			"name": "Get a User",
 			"request": {
-				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",
+				"url": "http://127.0.01:5000/users/59ad82734702e622da7bdd94",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -84,6 +84,26 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"firstName\": \"XXXXX\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Car",
+			"request": {
+				"url": "http://127.0.01:5000/users/59ad82734702e622da7bdd94/cars",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"make\": \"Mazda\",\n\t\"model\": \"RX8\",\n\t\"year\": 2005\n}"
 				},
 				"description": ""
 			},

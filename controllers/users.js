@@ -1,5 +1,6 @@
 const
-  User = require('../models/user')
+  User = require('../models/user'),
+  Car = require('../models/car')
 
 module.exports = {
   'index': async (req, res, next) => {
@@ -51,5 +52,26 @@ module.exports = {
     res
       .status(200)
       .json()
+  },
+
+  'newUserCar': async (req, res, next) => {
+    const
+      { userId } = req.params,
+      user = await User.findById(userId),
+
+      // Create a new car
+      newCar = new Car(req.body)
+
+    // Assign user as car's seller
+    newCar.seller = user
+    await newCar.save()
+
+    // Add car to the user's selling array `cars`
+    user.cars.push(newCar)
+    await user.save()
+
+    res
+      .status(201)
+      .json(newCar)
   }
 }

@@ -13,4 +13,7 @@ router.route('/:userId')
   .put(usersController.replaceUser)
   .patch(usersController.updateUser)
 
+router.route('/:userId/cars')
+  .post(usersController.newUserCar)
+
 module.exports = router
