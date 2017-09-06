@@ -1,0 +1,93 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CodeWorkr API",
+		"_postman_id": "7724396c-9579-7e81-b990-dd03ebff8b47",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"url": "http://127.0.01:5000/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Suda\",\n\t\"lastName\": \"Test\",\n\t\"email\": \"test@suda.email\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Users",
+			"request": {
+				"url": "http://127.0.01:5000/users",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a User",
+			"request": {
+				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Replace User",
+			"request": {
+				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Suda\",\n\t\"lastName\": \"Test Changed 1\",\n\t\"email\": \"test@suda.email\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"XXXXX\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
