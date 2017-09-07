@@ -14,7 +14,7 @@ module.exports = {
 
   'newUser': async (req, res, next) => {
     const
-      newUser = new User(req.body),
+      newUser = new User(req.valid.body),
       user = await newUser.save()
 
     res
