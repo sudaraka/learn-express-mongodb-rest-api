@@ -52,6 +52,18 @@ const
       'firstName': Joi.string().required(),
       'lastName': Joi.string().required(),
       'email': Joi.string().email().required()
+    }),
+
+    'userOptional': Joi.object().keys({
+      'firstName': Joi.string(),
+      'lastName': Joi.string(),
+      'email': Joi.string().email()
+    }),
+
+    'car': Joi.object().keys({
+      'make': Joi.string().required(),
+      'model': Joi.string().required(),
+      'year': Joi.number().required()
     })
   }
 

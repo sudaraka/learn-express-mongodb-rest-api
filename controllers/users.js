@@ -33,10 +33,10 @@ module.exports = {
   },
 
   'replaceUser': async (req, res, next) => {
-    // TODO: enfore that req.body must contain all the fields
+    // req.body must contain all the fields
     const
-      { userId } = req.params,
-      user = await User.findByIdAndUpdate(userId, req.body)
+      { userId } = req.valid.params,
+      user = await User.findByIdAndUpdate(userId, req.valid.body)
 
     res
       .status(200)
@@ -46,8 +46,8 @@ module.exports = {
   'updateUser': async (req, res, next) => {
     // req.body may contain any number of fields
     const
-      { userId } = req.params,
-      user = await User.findByIdAndUpdate(userId, req.body)
+      { userId } = req.valid.params,
+      user = await User.findByIdAndUpdate(userId, req.valid.body)
 
     res
       .status(200)
@@ -56,7 +56,7 @@ module.exports = {
 
   'getUserCars': async (req, res, next) => {
     const
-      { userId } = req.params,
+      { userId } = req.valid.params,
       { cars } = await User.findById(userId).populate('cars')
 
     res
@@ -66,11 +66,11 @@ module.exports = {
 
   'newUserCar': async (req, res, next) => {
     const
-      { userId } = req.params,
+      { userId } = req.valid.params,
       user = await User.findById(userId),
 
       // Create a new car
-      newCar = new Car(req.body)
+      newCar = new Car(req.valid.body)
 
     // Assign user as car's seller
     newCar.seller = user
