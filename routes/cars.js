@@ -17,5 +17,10 @@ router.route('/:carId')
     validateId(schemas.id, 'carId'),
     carsController.getCar
   )
+  .put(
+    validateId(schemas.id, 'carId'),
+    validateBody(schemas.replaceCar),
+    carsController.replaceCar
+  )
 
 module.exports = router

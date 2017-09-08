@@ -112,6 +112,26 @@
 			"response": []
 		},
 		{
+			"name": "Replace Car",
+			"request": {
+				"url": "http://127.0.01:5000/cars/59b13a434830c06b8b59ac5e",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"make\": \"DMC\",\n\t\"model\": \"Flux Capacitor\",\n\t\"year\": 1983\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Update User",
 			"request": {
 				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",
