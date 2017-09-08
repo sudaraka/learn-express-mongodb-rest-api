@@ -28,6 +28,26 @@
 			"response": []
 		},
 		{
+			"name": "Create Car",
+			"request": {
+				"url": "http://127.0.01:5000/cars",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"make\": \"BMW\",\n\t\"model\": \"???\",\n\t\"year\": 2000,\n\t\"seller\": \"59ad87c54aa2142f3b748b30\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Get all Users",
 			"request": {
 				"url": "http://127.0.01:5000/users",

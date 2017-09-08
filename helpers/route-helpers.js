@@ -64,6 +64,13 @@ const
       'make': Joi.string().required(),
       'model': Joi.string().required(),
       'year': Joi.number().required()
+    }),
+
+    'newCar': Joi.object().keys({
+      'make': Joi.string().required(),
+      'model': Joi.string().required(),
+      'year': Joi.number().required(),
+      'seller': Joi.string().regex(/^[a-fA-F0-9]{24}$/).required()
     })
   }
 
