@@ -2,7 +2,8 @@ const
   express = require('express'),
   logger = require('morgan'),
   mongoose = require('mongoose'),
-  bodyParser = require('body-parser')
+  bodyParser = require('body-parser'),
+  helmet = require('helmet')
 
   // Routes
   users = require('./routes/users'),
@@ -15,6 +16,7 @@ mongoose.Promise = global.Promise
 mongoose.connect('mongodb://172.17.0.2:27017/api-data', { 'useMongoClient': true })
 
 // Middleware
+app.use(helmet())
 app.use(logger('dev'))
 app.use(bodyParser.json())
 
