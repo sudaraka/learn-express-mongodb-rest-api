@@ -6,6 +6,7 @@ const
 
   // Routes
   users = require('./routes/users'),
+  cars = require('./routes/cars'),
 
   app = express(),
   port = app.get('port') || 5000
@@ -19,6 +20,7 @@ app.use(bodyParser.json())
 
 // Routes
 app.use('/users', users)
+app.use('/cars', cars)
 
 // Catch 404 Errors and forward to error handlers
 app.use((req, res, next) => {
