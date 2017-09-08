@@ -12,4 +12,10 @@ router.route('/')
     carsController.newCar
   )
 
+router.route('/:carId')
+  .get(
+    validateId(schemas.id, 'carId'),
+    carsController.getCar
+  )
+
 module.exports = router

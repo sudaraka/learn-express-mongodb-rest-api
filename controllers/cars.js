@@ -37,5 +37,15 @@ module.exports = {
         .status(404)
         .json({ 'error': 'Seller nor found' })
     }
+  },
+
+  'getCar': async (req, res, next) => {
+    const
+      { carId } = req.valid.params,
+      car = await Car.findById(carId)
+
+    res
+      .status(200)
+      .json(car)
   }
 }

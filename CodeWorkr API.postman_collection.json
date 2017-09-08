@@ -72,7 +72,18 @@
 		{
 			"name": "Get a User",
 			"request": {
-				"url": "http://127.0.01:5000/users/59ad82734702e622da7bdd94",
+				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Car",
+			"request": {
+				"url": "http://127.0.01:5000/cars/59afe259d9e6025ed2434e16",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -94,7 +105,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"firstName\": \"Suda\",\n\t\"lastName\": \"Test Changed 1\",\n\t\"email\": \"test@suda.email\"\n}"
+					"raw": "{\n\t\"firstName\": \"Change record\",\n\t\"lastName\": \"Test Changed 1\",\n\t\"email\": \"test@suda.email\"\n}"
 				},
 				"description": ""
 			},
