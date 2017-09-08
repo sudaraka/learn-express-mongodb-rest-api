@@ -22,5 +22,10 @@ router.route('/:carId')
     validateBody(schemas.replaceCar),
     carsController.replaceCar
   )
+  .patch(
+    validateId(schemas.id, 'carId'),
+    validateBody(schemas.replaceCarOptional),
+    carsController.updateCar
+  )
 
 module.exports = router

@@ -77,6 +77,12 @@ const
       'make': Joi.string().required(),
       'model': Joi.string().required(),
       'year': Joi.number().required()
+    }),
+
+    'replaceCarOptional': Joi.object().keys({
+      'make': Joi.string(),
+      'model': Joi.string(),
+      'year': Joi.number()
     })
   }
 
