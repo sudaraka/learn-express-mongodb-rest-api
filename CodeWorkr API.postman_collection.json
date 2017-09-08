@@ -92,6 +92,17 @@
 			"response": []
 		},
 		{
+			"name": "Delete a Car",
+			"request": {
+				"url": "http://127.0.01:5000/cars/59afe20672ac575e464e53ab",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Replace User",
 			"request": {
 				"url": "http://127.0.01:5000/users/59ad827b4702e622da7bdd95",

@@ -69,5 +69,29 @@ module.exports = {
     res
       .status(200)
       .json()
+  },
+
+  'deleteCar': async (req, res, next) => {
+    const
+      { carId } = req.valid.params,
+      car = await Car.findById(carId)
+
+    if(!car) {
+      return res
+        .status(404)
+        .json({ 'error': 'Car doesn\'t exists' })
+    }
+
+    const
+      seller = await User.findById(car.seller)
+
+    seller.cars.pull(carId)
+    await seller.save()
+
+    await car.remove()
+
+    res
+      .status(200)
+      .json()
   }
 }

@@ -27,5 +27,9 @@ router.route('/:carId')
     validateBody(schemas.replaceCarOptional),
     carsController.updateCar
   )
+  .delete(
+    validateId(schemas.id, 'carId'),
+    carsController.deleteCar
+  )
 
 module.exports = router
