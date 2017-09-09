@@ -49,19 +49,7 @@ module.exports = {
       .json(car)
   },
 
-  'replaceCar': async (req, res, next) => {
-    // req.body must contain all the fields
-    const
-      { carId } = req.valid.params,
-      car = await Car.findByIdAndUpdate(carId, req.valid.body)
-
-    res
-      .status(200)
-      .json()
-  },
-
   'updateCar': async (req, res, next) => {
-    // req.body may contain any number of fields
     const
       { carId } = req.valid.params,
       car = await Car.findByIdAndUpdate(carId, req.valid.body)

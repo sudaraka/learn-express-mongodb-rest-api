@@ -18,11 +18,13 @@ router.route('/:userId')
     usersController.getUser
   )
   .put(
+    // req.body must contain all the fields
     validateId(schemas.id, 'userId'),
     validateBody(schemas.user),
-    usersController.replaceUser
+    usersController.updateUser
   )
   .patch(
+    // req.body may contain any number of fields
     validateId(schemas.id, 'userId'),
     validateBody(schemas.userOptional),
     usersController.updateUser

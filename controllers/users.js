@@ -32,19 +32,7 @@ module.exports = {
       .json(user)
   },
 
-  'replaceUser': async (req, res, next) => {
-    // req.body must contain all the fields
-    const
-      { userId } = req.valid.params,
-      user = await User.findByIdAndUpdate(userId, req.valid.body)
-
-    res
-      .status(200)
-      .json()
-  },
-
   'updateUser': async (req, res, next) => {
-    // req.body may contain any number of fields
     const
       { userId } = req.valid.params,
       user = await User.findByIdAndUpdate(userId, req.valid.body)
