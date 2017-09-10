@@ -13,24 +13,24 @@ router.route('/')
   )
 
 router.route('/:carId')
+  .all(
+    // Apply carId validation to all route methods
+    validateId(schemas.id, 'carId')
+  )
   .get(
-    validateId(schemas.id, 'carId'),
     carsController.getCar
   )
   .put(
     // req.body must contain all the fields
-    validateId(schemas.id, 'carId'),
     validateBody(schemas.replaceCar),
     carsController.updateCar
   )
   .patch(
     // req.body may contain any number of fields
-    validateId(schemas.id, 'carId'),
     validateBody(schemas.replaceCarOptional),
     carsController.updateCar
   )
   .delete(
-    validateId(schemas.id, 'carId'),
     carsController.deleteCar
   )
 

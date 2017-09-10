@@ -13,30 +13,31 @@ router.route('/')
   )
 
 router.route('/:userId')
-  .get(
+  .all(
     validateId(schemas.id, 'userId'),
+  )
+  .get(
     usersController.getUser
   )
   .put(
     // req.body must contain all the fields
-    validateId(schemas.id, 'userId'),
     validateBody(schemas.user),
     usersController.updateUser
   )
   .patch(
     // req.body may contain any number of fields
-    validateId(schemas.id, 'userId'),
     validateBody(schemas.userOptional),
     usersController.updateUser
   )
 
 router.route('/:userId/cars')
-  .get(
+  .all(
     validateId(schemas.id, 'userId'),
+  )
+  .get(
     usersController.getUserCars
   )
   .post(
-    validateId(schemas.id, 'userId'),
     validateBody(schemas.car),
     usersController.newUserCar
   )
